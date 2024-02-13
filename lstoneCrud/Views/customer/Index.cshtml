@@ -1,0 +1,73 @@
+﻿
+@model List<lstoneCrud.Models.customermodel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+    input[type=text] {
+        width: 100%;
+        padding: 8px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 3px solid #ccc;
+        margin-left: 40px;
+    }
+
+    form {
+        align-items: center;
+    }
+
+    .frm {
+        align-items: center;
+    }
+
+    .btn {
+        margin-left: 30px;
+        padding: 30px;
+        margin: 10px;
+        margin-block: 10px;
+    }
+</style>
+<h2 style="font: bold" align=" center">Perform CRUD Operations Customer Details</h2>
+<div>
+    <table>
+        <tr><td>id</td><td>name</td></tr>
+        @foreach (var item in Model)
+        {
+            <tr><td>@Html.DisplayFor(a => item.id)</td></tr>
+            <tr><td>@Html.DisplayFor(a => item.name)</td></tr>
+            <tr><td>@Html.DisplayFor(a => item.email)</td></tr>
+            <tr><td>@Html.DisplayFor(a => item.phoneno)</td></tr>
+        }
+    </table>
+</div>
+<div class="frm">
+    <form>
+        <table>
+
+            <tr><td>Customer ID</td><td><input type="text" placeholder=ID id="id"></td></tr>
+            <tr><td>Customer Name</td><td><input type="text" placeholder=Name id="name"></td></tr>
+            <tr><td>Salary</td><td><input type="text" placeholder=Salary id="salary"></td></tr>
+            <tr><td>Email</td><td><input type="text" placeholder=Email id="email"></td></tr>
+            <tr><td>Phone No</td><td><input type="text" placeholder=Phone-No id="phno"></td></tr>
+            <tr><td>Address</td><td><input type="text" placeholder=Address id="address"></td></tr>
+        </table>
+    </form>
+</div>
+<div class="btn">
+    <table>
+        <tr>
+            <td></td>
+            <td>.....@Html.ActionLink("Insert", "Create")  </td>
+            <td>.....@Html.ActionLink("Update", "update")  </td>
+            <td>.....@Html.ActionLink("Delete", "delete")  </td>
+        </tr>
+    </table>
+</div>
+<p>
+
+    @Html.ActionLink("Back to List", "Index")
+
+</p>
